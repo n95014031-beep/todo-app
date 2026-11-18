@@ -1,0 +1,32 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build Flet APK
+        id: build
+        uses: flet-dev/flet-build-action@v1
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        with:
+          target: apk
+          runner-python-version: "3.12"
+          build-number: ${{ github.run_number }}
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v7
+        with:
+          name: todo-apk
+          path: ${{ steps.build.outputs.archive-path }}
+          archive: false
+          if-no-files-found: error
