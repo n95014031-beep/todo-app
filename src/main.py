@@ -7,7 +7,7 @@ from supabase import create_client, Client
 import os
 
 # ---- ВСТАВЬТЕ ВАШИ ДАННЫЕ СЮДА ----
-_DEFAULT_URL = "ВАШ_URL"
+_DEFAULT_URL = "https://jlkrepuwoeccmroeiyiz.supabase.co"
 _DEFAULT_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impsa3JlcHV3b2VjY21yb2VpeWl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ5NzE4NTcsImV4cCI6MjExMDU0Nzg1N30.SrpGtJBVrBEmkLTIMmrR8XQeKrAVrXYhCXkdt6NXRok"
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL") or _DEFAULT_URL
