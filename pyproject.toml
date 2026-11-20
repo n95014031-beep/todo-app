@@ -1,0 +1,18 @@
+[project]
+name = "todo-flet-supabase"
+version = "1.0.0"
+description = "Учебное приложение Список задач"
+requires-python = ">=3.11"
+dependencies = [
+    "flet==0.28.3",
+    "supabase==2.15.1",
+]
+
+[tool.flet]
+product = "Список задач"
+org = "com.student"
+company = "Student"
+copyright = "Student"
+
+[tool.flet.app]
+path = "src"
